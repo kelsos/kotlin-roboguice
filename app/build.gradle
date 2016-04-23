@@ -27,9 +27,9 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   testCompile 'junit:junit:4.12'
   compile 'com.android.support:appcompat-v7:23.3.0'
-  compile 'org.roboguice:roboguice:3.0.1'
-  provided 'org.roboguice:roboblender:3.0.1'
-  kapt 'org.roboguice:roboblender:3.0.1'
+  compile 'org.roboguice:roboguice:4.0.0'
+  provided 'org.roboguice:roboblender:4.0.0'
+  kapt 'org.roboguice:roboblender:4.0.0'
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 buildscript {

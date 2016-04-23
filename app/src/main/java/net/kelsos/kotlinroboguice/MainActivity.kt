@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val injector = RoboGuice.getOrCreateBaseApplicationInjector(application)
+        RoboGuice.setupBaseApplicationInjector(application)
+        val injector = RoboGuice.getInjector(this)
         injector.injectMembers(this)
         setContentView(R.layout.activity_main)
     }
@@ -19,5 +20,10 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         someInterface.myMethod(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        RoboGuice.destroyInjector(this)
     }
 }
